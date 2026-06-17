@@ -21,11 +21,19 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Tap checkout
+        run: brew tap chattocorp/tap "$GITHUB_WORKSPACE"
+
       - name: Audit formula
-        run: brew audit --formula Formula/chatto.rb
+        run: brew audit --formula chattocorp/tap/chatto
 
       - name: Style formula
-        run: brew style Formula/chatto.rb
+        run: brew style chattocorp/tap/chatto
+
+      - name: Install formula
+        if: ${{ runner.os != 'macOS' || runner.arch == 'ARM64' }}
+        run: brew install chattocorp/tap/chatto
 
       - name: Test formula
-        run: brew test Formula/chatto.rb
+        if: ${{ runner.os != 'macOS' || runner.arch == 'ARM64' }}
+        run: brew test chattocorp/tap/chatto
