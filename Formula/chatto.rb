@@ -1,13 +1,13 @@
 class Chatto < Formula
   desc "Real-time chat app CLI and server"
   homepage "https://github.com/chattocorp/chatto"
-  version "0.2.0"
+  version "0.2.1"
   license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
       url "https://github.com/chattocorp/chatto/releases/download/v#{version}/chatto_Darwin_arm64.tar.gz"
-      sha256 "1c33240b86673e2dc1cb4aa0637898d1534fdb0790ba94a23e0c00d49fc984e7"
+      sha256 "5555110e4ff75c64b59efe1199bf75a8670876790c176fed6fa6e84234a0398a"
     end
 
     on_intel do
@@ -18,18 +18,17 @@ class Chatto < Formula
   on_linux do
     on_arm do
       url "https://github.com/chattocorp/chatto/releases/download/v#{version}/chatto_Linux_arm64.tar.gz"
-      sha256 "7d5aad3b0e7c74c93f901456db53c9e5e1628499686013aedeca4f9293645b33"
+      sha256 "a29c382dcccc7d5b197af70bc27bdc04e00959c9a0daeaad7ac88aec7701e6d2"
     end
 
     on_intel do
       url "https://github.com/chattocorp/chatto/releases/download/v#{version}/chatto_Linux_x86_64.tar.gz"
-      sha256 "fbc98d2a7bf9c81778e19eb514dc1a999b1b0ad731772ecf060bc55ee905b946"
+      sha256 "997fc4ecd264a44c4576ce7a8ec8a11091193ff64a5764fc0294355a2dad220b"
     end
   end
 
   def install
     bin.install "chatto"
-
     system "codesign", "--force", "--sign", "-", bin/"chatto" if OS.mac?
   end
 
