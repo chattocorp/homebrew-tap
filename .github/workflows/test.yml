@@ -21,11 +21,6 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Tap checkout
-        run: |
-          brew untap chattocorp/tap || true
-          brew tap chattocorp/tap "$GITHUB_WORKSPACE"
-
       - name: Audit formula
         run: brew audit --formula chattocorp/tap/chatto
 
