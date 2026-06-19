@@ -1,13 +1,13 @@
 class Chatto < Formula
   desc "Real-time chat app CLI and server"
   homepage "https://github.com/chattocorp/chatto"
-  version "0.3.5"
+  version "0.3.6"
   license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
       url "https://github.com/chattocorp/chatto/releases/download/v#{version}/chatto_Darwin_arm64.tar.gz"
-      sha256 "8203fc5f6dd689d3f4207ee25c85ffd7e84c7c9bf29c505d74d6e33ff6fdeae1"
+      sha256 "3c3bdf958b8db16e45dae07c537f1033e339f3c7d11f95f841f73b060a153007"
     end
 
     on_intel do
@@ -18,12 +18,12 @@ class Chatto < Formula
   on_linux do
     on_arm do
       url "https://github.com/chattocorp/chatto/releases/download/v#{version}/chatto_Linux_arm64.tar.gz"
-      sha256 "1475d5670adf1092256686d47309d99615d434d2be356ecf5e4d32d42068c480"
+      sha256 "94c305c70ff2669a204a5bcc5e2de7374cf9ee72fefe7b55644407a640c149e5"
     end
 
     on_intel do
       url "https://github.com/chattocorp/chatto/releases/download/v#{version}/chatto_Linux_x86_64.tar.gz"
-      sha256 "8f67d38a48ed082c9a3a21e3e07d541a69fcbde68ea9bf69464fd0e72b261e5e"
+      sha256 "ba643c6a3b987a03b41e9295f945e5ec621712dd3d76aa85ea0fdfefcae8c252"
     end
   end
 
